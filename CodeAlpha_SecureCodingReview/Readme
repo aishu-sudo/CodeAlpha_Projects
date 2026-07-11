@@ -1,0 +1,182 @@
+# CodeAlpha Secure Coding Review
+
+## Project Overview
+
+This project was developed as part of the CodeAlpha Cyber Security Internship (Task 3: Secure Coding Review).
+
+The project demonstrates common security vulnerabilities in a Flask application and shows how they can be fixed using secure coding practices.
+
+---
+
+## Technologies Used
+
+- Python
+- Flask
+- SQLite
+- bcrypt
+- Bandit
+
+---
+
+## Project Structure
+
+```
+CodeAlpha_SecureCodingReview/
+
+├── app.py              # Vulnerable application
+├── app_fixed.py        # Fixed application
+├── users.db            # Database
+├── requirements.txt
+├── screenshots/
+└── README.md
+```
+
+---
+
+## Vulnerabilities Found
+
+### 1. Hardcoded Secret Key
+
+Severity: Medium
+
+Issue:
+
+The secret key was stored directly in the source code.
+
+Fix:
+
+Used environment variables.
+
+---
+
+### 2. Plaintext Password Storage
+
+Severity: High
+
+Issue:
+
+Passwords were stored directly in the database.
+
+Fix:
+
+Passwords are hashed using bcrypt.
+
+---
+
+### 3. SQL Injection
+
+Severity: Critical
+
+Issue:
+
+SQL queries were created using string concatenation.
+
+Fix:
+
+Parameterized queries were implemented.
+
+---
+
+### 4. Information Leakage
+
+Severity: Medium
+
+Issue:
+
+The application displayed internal SQL queries.
+
+Fix:
+
+Generic error messages are shown.
+
+---
+
+### 5. Command Injection
+
+Severity: Critical
+
+Issue:
+
+The application executed system commands using:
+
+```python
+os.popen(cmd)
+```
+
+Fix:
+
+Removed unsafe command execution.
+
+---
+
+### 6. Debug Mode Enabled
+
+Severity: Medium
+
+Issue:
+
+The application was running in debug mode.
+
+Fix:
+
+Debug mode was disabled.
+
+---
+
+## Security Tools Used
+
+### Bandit
+
+Run:
+
+```bash
+bandit -r .
+```
+
+Generate report:
+
+```bash
+bandit -r . > bandit_report.txt
+```
+
+---
+
+## How to Run
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate:
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run vulnerable version:
+
+```bash
+python app.py
+```
+
+Run secure version:
+
+```bash
+python app_fixed.py
+```
+
+---
+
+## Author
+
+Jannatul Ferdaus Oishi
+
+CodeAlpha Cyber Security Internship
