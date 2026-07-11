@@ -124,4 +124,5 @@ Then open `http://127.0.0.1:5000` in your browser.
 
 ## Author
 Jannatul Ferdaus Oishi
+
 CodeAlpha Cyber Security Internship
