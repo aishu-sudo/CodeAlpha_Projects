@@ -35,7 +35,10 @@ def init_db():
 
 @app.route("/")
 def home():
-    return "Welcome to the Notes App. Go to /login"
+    return '''
+    <h1>Welcome to the Notes App</h1>
+    <a href="/login">Go to Login</a>
+    '''
 
 
 @app.route("/login", methods=["GET", "POST"])
