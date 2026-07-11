@@ -4,7 +4,7 @@
 This project was developed as part of the CodeAlpha Cyber Security Internship (Task 3: Secure Coding Review).
 The project demonstrates common security vulnerabilities in a Flask application and shows how they can be fixed using secure coding practices.
 
-📄 Full technical write-up with before/after code, findings table, and screenshot evidence: [REPORT.md](./REPORT.md)
+📄 Full technical write-up with before/after code, findings table, and screenshot evidence: [REPORT.md](./CodeAlpha_SecureCodingReview/Report.pdf)
 
 ---
 
